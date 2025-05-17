@@ -1,4 +1,4 @@
-﻿namespace StateLib.PushDownAutomata;
+﻿namespace Metarract.States.PushDownAutomata;
 public abstract class State<T> where T : class {
   protected readonly StateMachine<T> PDA;
 

@@ -1,6 +1,6 @@
 using Godot;
 
-namespace StateLib.FiniteStateMachine;
+namespace Metarract.States.FiniteStateMachine;
 public abstract class State<T> where T : class {
   public delegate void StateChangeHandler(State<T> nextState);
   public event StateChangeHandler OnChangeState;

@@ -1,4 +1,4 @@
-﻿namespace StateLib.PushDownAutomata;
+﻿namespace Metarract.States.PushDownAutomata;
 
 public class StateMachine<T> where T : class {
   private readonly Stack<State<T>> StateStack = [];

@@ -1,27 +1,26 @@
-﻿namespace Metarract.States.PushDownAutomata;
+﻿using System.Collections.Generic;
 
-public class StateMachine<T> where T : class {
-  private readonly Stack<State<T>> StateStack = [];
-  public State<T> CurrentState => StateStack.Count > 0 ? StateStack.Peek() : null;
+namespace Metarract.StateLib.PushDownAutomata;
+public class PushDownAutomata<T>(T context) where T : class {
+  private readonly Stack<State<T>> _stateStack = [];
+  public State<T> CurrentState => _stateStack.Count > 0 ? _stateStack.Peek() : null;
 
-  public T Root { get; private set; }
-
-  public StateMachine(T root) {
-    Root = root;
-  }
+  public T Context { get; private set; } = context;
 
   public void Push(State<T> newState) {
-    StateStack.Push(newState);
+    _stateStack.Push(newState);
     newState.EnterState();
   }
 
   public void Pop() {
-    if (StateStack.Count == 0) return;
+    if (_stateStack.Count == 0) return;
+    CurrentState.OnPop -= Pop;
     CurrentState.ExitState();
-    StateStack.Pop();
+    _stateStack.Pop();
+    CurrentState.OnPop += Pop;
   }
 
-  public void SetRoot(T root) => Root = root;
+  public void SetContext(T context) => Context = context;
 
   public void Process(double delta) => CurrentState?.Process(delta);
 }

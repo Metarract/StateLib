@@ -1,3 +1,9 @@
-.godot/
 obj/
 bin/
+.idea/
+
+build/
+
+*.nupkg
+*.snupkg
+*.ps1

@@ -1,11 +1,20 @@
-﻿<Project Sdk="Godot.NET.Sdk/4.3.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net9.0</TargetFramework>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+        <Authors>Metarract</Authors>
+        <Description>A collection of state-based models</Description>
+        <RepositoryUrl>https://github.com/Metarract/StateLib</RepositoryUrl>
+        <PackageId>Metarract.StateLib</PackageId>
+        <Version>0.1.0</Version>
     </PropertyGroup>
     <ItemGroup>
-      <Content Include=".gitignore" />
+      <None Include=".gitignore" />
+      <None Include="pushLocalPackage.ps1" />
     </ItemGroup>
-
+    <ItemGroup>
+      <Content Include="LICENSE" />
+      <Content Include="README.md" />
+    </ItemGroup>
 </Project>

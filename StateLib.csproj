@@ -7,14 +7,9 @@
         <Description>A collection of state-based models</Description>
         <RepositoryUrl>https://github.com/Metarract/StateLib</RepositoryUrl>
         <PackageId>Metarract.StateLib</PackageId>
-        <Version>0.1.0</Version>
+        <Version>0.1.1</Version>
     </PropertyGroup>
-    <ItemGroup>
-      <None Include=".gitignore" />
-      <None Include="pushLocalPackage.ps1" />
-    </ItemGroup>
-    <ItemGroup>
-      <Content Include="LICENSE" />
-      <Content Include="README.md" />
-    </ItemGroup>
+    <PropertyGroup>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
 </Project>
